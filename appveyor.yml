@@ -1,0 +1,22 @@
+environment:
+matrix:
+# node.js
+- nodejs_version: "10"
+
+# install scripts. (run after clone repos)
+install:
+# Get the latest stable version of Node.js or io.js
+- ps: Install-Product node $env:nodejs_version
+# install modules
+- npm install
+
+# post install scripts.
+test_scripts:
+#output usefull info for debugging.
+- node --version
+- npm --version
+# run test
+- npm test
+
+#don't actually build.
+build: off
