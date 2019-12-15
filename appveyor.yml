@@ -1,7 +1,8 @@
+# test against node.js 
 environment:
   matrix:
-# node.js
-- nodejs_version: 10
+  # node.js
+  - nodejs_version: 10
 
 # install scripts. (run after clone repos)
 install:
